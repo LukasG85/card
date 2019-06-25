@@ -1,0 +1,62 @@
+.game {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-template-rows: repeat(4, 200px);
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  border: 1px solid white;
+
+}
+
+.card .disable {
+  opacity: 0.3;
+}
+
+.card .image {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  object-fit: cover;
+  transform: perspective(1000px) rotateY(180deg);
+  transition: transform 0.5s ease;
+}
+
+.card .back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  object-fit: cover;
+  transform: perspective(1000px) rotateY(0deg);
+  transition: transform 0.5s ease;
+}
+
+.card.disable>.image {
+  transform: perspective(1000px) rotateY(0deg);
+
+}
+
+.card.disable>.back {
+  transform: perspective(1000px) rotateY(-180deg);
+}
+
+.game-title {
+  color: #fff;
+  text-align: center;
+  margin: 0;
+}
+
+.game-number {
+  color: #fff;
+  text-align: center;
+  margin: 10px auto;
+}
